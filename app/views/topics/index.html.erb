@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Topics</h1>
+
+
+<% @topics.each do |topic| %>
+    
+<h2>Title: <span class="phrase"><%= topic.title %></span></h2>
+
+
+ <h3>Description:</h3>
+ <p><%= topic.description %></p>
+
+    <tr>
+      <!-- <td><%= topic.title %></td>
+      <td><%= topic.description %></td> -->
+      <td><%= link_to 'Show', topic %></td>
+      <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+      <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+
+  <% end %>
+<br>
+<br>
+
+<%= link_to 'New Topic', new_topic_path %>
