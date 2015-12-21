@@ -5,11 +5,13 @@
 
 <% @topics.each do |topic| %>
     
-<h2>Title: <span class="phrase"><%= topic.title %></span></h2>
+<h2>Title: <span class="phrase"><%= link_to topic.title, topic %></span></h2>
 
 
  <h3>Description:</h3>
  <p><%= topic.description %></p>
+ <%= button_to 'Vote', upvote_topic_path(topic), method: :post %><%= topic.votes.count %>
+ <br>
 
     <tr>
       <!-- <td><%= topic.title %></td>
